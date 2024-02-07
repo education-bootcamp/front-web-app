@@ -7,13 +7,13 @@ import {Observable} from "rxjs";
 })
 export class ProductsService {
 
-  url = 'https://jsonplaceholder.typicode.com/posts';
+  url = 'http://localhost:3002/api/v1/';
 
   constructor(private http: HttpClient) {
   }
 
   public loadProducts(page: any, size: any, searchText: any): Observable<any> {
-    return this.http.get(this.url);
+    return this.http.get(this.url + 'products/find-all');
   }
 
 }
