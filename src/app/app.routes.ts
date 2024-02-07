@@ -9,12 +9,13 @@ import {ForgotPasswordPageComponent} from "./pages/security/forgot-password-page
 import {OtpVerificationPageComponent} from "./pages/security/otp-verification-page/otp-verification-page.component";
 import {ResetPasswordPageComponent} from "./pages/security/reset-password-page/reset-password-page.component";
 import { OrdersPageComponent } from './pages/orders/orders-page/orders-page.component';
+import {authGuard} from "./modules/utility/services/guards/auth.guard";
 
 export const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch:'full'},
   {path:'home', component:HomePageComponent},
   {path:'products', component:ProductPageComponent},
-  {path:'orders', component:OrdersPageComponent},
+  {path:'orders', component:OrdersPageComponent, canActivate:[authGuard]},
   {path:'product-details/:id', component:ProductViewPageComponent},
   {path:'login', component:LoginPageComponent},
   {path:'signup', component:SignupPageComponent},
