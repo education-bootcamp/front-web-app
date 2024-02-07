@@ -23,6 +23,12 @@ export class CookieManagerService {
       this.cookieService.delete('my-token');
     }
   }
-
+  public getToken():string {
+ /*   if (this.isTokenExists()) {
+      return this.cookieService.get('my-token');
+    }
+    return '';*/
+    return this.isTokenExists()?this.cookieService.get('my-token'):'';
+  }
 
 }

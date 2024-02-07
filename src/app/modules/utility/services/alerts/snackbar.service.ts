@@ -17,4 +17,12 @@ export class SnackbarService {
       duration: 5000
     })
   }
+  public openWarningSnackbar(
+    message: any,
+    action: any
+  ) {
+    this.snackbar.open(message, action, {
+      duration: 5000
+    })
+  }
 }

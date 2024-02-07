@@ -1,3 +1,4 @@
 <app-main-header></app-main-header>
+<mat-progress-bar *ngIf="loadingStatusService.loadingState | async" mode="indeterminate" value="40"></mat-progress-bar>
 <router-outlet></router-outlet>
 <app-main-footer></app-main-footer>
